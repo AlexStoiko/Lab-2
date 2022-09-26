@@ -139,7 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="company.cpp" />
+    <ClCompile Include="creation.cpp" />
+    <ClCompile Include="devices.cpp" />
     <ClCompile Include="lab 2.cpp" />
+    <ClCompile Include="laptop.cpp" />
+    <ClCompile Include="smartphone.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="company.h" />
+    <ClInclude Include="creation.h" />
+    <ClInclude Include="devices.h" />
+    <ClInclude Include="laptop.h" />
+    <ClInclude Include="smartphone.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
