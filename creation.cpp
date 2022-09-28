@@ -11,7 +11,7 @@ creation init_cn(int expenses_rent, int expenses_creation)
     return creat;
 }
 
-void input_creat(struct creation &creat)
+void input_creat(class creation &creat)
 {
     cout << "Введите постоянные издержки" << endl;
     cin >> creat.expenses_rent;
@@ -19,13 +19,13 @@ void input_creat(struct creation &creat)
     cin >> creat.expenses_creation;
 }
 
-void output_creat(struct creation &creat)
+void output_creat(class creation &creat)
 {
     cout << "Постоянные издержки = " << creat.expenses_rent << endl;
     cout << "Переменные издержки = " << creat.expenses_creation << endl;
 }
 
-int expenses_creat(struct creation &creat)
+int expenses_creat(class creation &creat)
 {
     return creat.expenses_rent + creat.expenses_creation;
 }

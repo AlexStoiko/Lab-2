@@ -9,7 +9,7 @@ smartphone init_sp(string model, int quality, int price)
     return smartp;
 }
 
-void input_smartp(struct smartphone &smartp)
+void input_smartp(class smartphone &smartp)
 {
     cout << "Введите модель смартфона" << endl;
     cin >> smartp.model_sp;
@@ -19,7 +19,7 @@ void input_smartp(struct smartphone &smartp)
     cin >> smartp.price_sp;
 }
 
-void output_smartp(struct smartphone &smartp)
+void output_smartp(class smartphone &smartp)
 {
     cout << "Модель смартфона: " << smartp.model_sp << endl;
     cout << "Число произведенных смарфонов = " << smartp.quantity_sp << endl;

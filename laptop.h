@@ -3,8 +3,9 @@
 #include <string>
 using namespace std;
 
-struct laptop
+class laptop
 {
+    public:
     string model_lt;
     int quantity_lt;
     int price_lt;

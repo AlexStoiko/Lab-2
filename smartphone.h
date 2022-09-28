@@ -3,8 +3,9 @@
 #include <string>
 using namespace std;
 
-struct smartphone
+class smartphone
 {
+    public:
     string model_sp;
     int quantity_sp;
     int price_sp;
@@ -12,6 +13,6 @@ struct smartphone
 
 smartphone init_sp(string model, int quality, int price);
 
-void input_smartp(struct smartphone& smartp);
+void input_smartp(class smartphone& smartp);
 
-void output_smartp(struct smartphone& smartp);
+void output_smartp(class smartphone& smartp);

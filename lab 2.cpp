@@ -19,12 +19,12 @@ int main()
     int exit = 1, n_sp = 0, n_lt = 0, n;
     init_sp("Model", 0, 0);
     init_lt("Model", 0, 0);
-    smartphone* smartphone = new struct smartphone[10];
-    laptop* laptop = new struct laptop[10];
+    smartphone* smartphone = new class smartphone[10];
+    laptop* laptop = new class laptop[10];
     devices dev = init_ds(smartphone, laptop);
     creation creat = init_cn(0, 0);
     company comp = init_comp("Brand", dev, creat);
-    input(comp, &n_sp, &n_lt);
+    comp.input(&n_sp, &n_lt);
     do
     {
         n = 0;
@@ -34,19 +34,19 @@ int main()
         switch (n)
         {
         case 1:
-            cout << "Доход с продаж =" << income(comp, n_sp, n_lt) << endl;
+            cout << "Доход с продаж =" << comp.income(n_sp, n_lt) << endl;
             _getch();
             break;
         case 2:
-            cout << "Издержки компании =" << expenses(comp) << endl;
+            cout << "Издержки компании =" << comp.expenses() << endl;
             _getch();
             break;
         case 3:
-            cout << "Прибыль компании =" << profit(comp, n_sp, n_lt) << endl;
+            cout << "Прибыль компании =" << comp.profit(n_sp, n_lt) << endl;
             _getch();
             break;
         case 4:
-            output(comp, n_sp, n_lt);
+            comp.output(n_sp, n_lt);
             _getch();
             break;
         case 5:

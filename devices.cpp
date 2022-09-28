@@ -11,7 +11,7 @@ devices init_ds(smartphone* smartphone, laptop* laptop)
     return dev;
 }
 
-void input_dev(struct devices &dev, int* n_sp, int* n_lt)
+void input_dev(class devices &dev, int* n_sp, int* n_lt)
 {
     cout << "Введите число моделей смартфонов вашей компании" << endl;
     cin >> *n_sp;
@@ -37,7 +37,7 @@ void input_dev(struct devices &dev, int* n_sp, int* n_lt)
     }
 }
 
-void output_dev(struct devices &dev, int n_sp, int n_lt)
+void output_dev(class devices &dev, int n_sp, int n_lt)
 {
     for (int i = 0; i < n_sp; i++)
     {
@@ -53,7 +53,7 @@ void output_dev(struct devices &dev, int n_sp, int n_lt)
     }
 }
 
-int income_dev(struct devices &dev, int n_sp, int n_lt)
+int income_dev(class devices &dev, int n_sp, int n_lt)
 {
     int income_sp = 0, income_lt = 0;
     for (int i = 0; i < n_sp; i++)

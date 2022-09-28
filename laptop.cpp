@@ -9,7 +9,7 @@ laptop init_lt(string model, int quality, int price)
     return lap;
 }
 
-void input(struct laptop &lap)
+void input(class laptop &lap)
 {
     cout << "Введите модель ноутбука" << endl;
     cin >> lap.model_lt;
@@ -19,7 +19,7 @@ void input(struct laptop &lap)
     cin >> lap.price_lt;
 }
 
-void output(struct laptop &lap)
+void output(class laptop &lap)
 {
     cout << "Модель ноутбука: " << lap.model_lt << endl;
     cout << "Число произведенных ноутбуков = " << lap.quantity_lt << endl;
