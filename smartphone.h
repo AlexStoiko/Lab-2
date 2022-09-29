@@ -3,16 +3,30 @@
 #include <string>
 using namespace std;
 
-class smartphone
+class Smartphone
 {
     public:
     string model_sp;
     int quantity_sp;
     int price_sp;
+
+    void input_smartp();
+
+    void output_smartp();
+
+    Smartphone(string model, int quality, int price);
+
+    Smartphone();
+
+    Smartphone(string model);
+
+    ~Smartphone();
 };
 
-smartphone init_sp(string model, int quality, int price);
+/*
+Smartphone init_sp(string model, int quality, int price);
 
-void input_smartp(class smartphone& smartp);
+void input_smartp(class Smartphone& smartp);
 
-void output_smartp(class smartphone& smartp);
+void output_smartp(class Smartphone& smartp);
+*/

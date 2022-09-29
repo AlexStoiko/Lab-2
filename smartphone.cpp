@@ -1,27 +1,41 @@
 #include "smartphone.h"
 
-smartphone init_sp(string model, int quality, int price)
+Smartphone::Smartphone(string model, int quality, int price)
 {
-    smartphone smartp;
-    smartp.model_sp = model;
-    smartp.quantity_sp = quality;
-    smartp.price_sp = price;
-    return smartp;
+    model_sp = model;
+    quantity_sp = quality;
+    price_sp = price;
 }
 
-void input_smartp(class smartphone &smartp)
+Smartphone::Smartphone()
+{
+    model_sp = "Model";
+    quantity_sp = 0;
+    price_sp = 0;
+}
+
+Smartphone::Smartphone(string model)
+{
+    model_sp = model;
+    quantity_sp = 0;
+    price_sp = 0;
+}
+
+Smartphone::~Smartphone() {}
+
+void Smartphone::input_smartp()
 {
     cout << "Введите модель смартфона" << endl;
-    cin >> smartp.model_sp;
+    cin >> model_sp;
     cout << "Введите число произведенных смартфонов" << endl;
-    cin >> smartp.quantity_sp;
+    cin >> quantity_sp;
     cout << "Ввведите цену одного смартфона" << endl;
-    cin >> smartp.price_sp;
+    cin >> price_sp;
 }
 
-void output_smartp(class smartphone &smartp)
+void Smartphone::output_smartp()
 {
-    cout << "Модель смартфона: " << smartp.model_sp << endl;
-    cout << "Число произведенных смарфонов = " << smartp.quantity_sp << endl;
-    cout << "Цена одного смартфона = " << smartp.price_sp << endl;
+    cout << "Модель смартфона: " << model_sp << endl;
+    cout << "Число произведенных смарфонов = " << quantity_sp << endl;
+    cout << "Цена одного смартфона = " << price_sp << endl;
 }

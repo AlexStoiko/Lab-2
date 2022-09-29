@@ -3,12 +3,22 @@
 #include <string>
 using namespace std;
 
-class laptop
+class Laptop
 {
     public:
     string model_lt;
     int quantity_lt;
     int price_lt;
-};
 
-laptop init_lt(string model, int quality, int price);
+    void input();
+
+    void output();
+
+    Laptop(string model, int quality, int price);
+
+    Laptop();
+
+    Laptop(string model);
+
+    ~Laptop();
+};

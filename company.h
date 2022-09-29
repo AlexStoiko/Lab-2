@@ -2,25 +2,25 @@
 #include "devices.h"
 #include "creation.h"
 
-class company
+class Company
 {
     public:
     string brand;
-    devices devaces;
-    creation creation;
-
+    Devices devises;
+    Creation creation;
     void input(int* n_sp, int* n_lt);
-
     void output(int n_sp, int n_lt);
-
     int income(int n_sp, int n_lt);
-
     int expenses();
-
     int profit(int n_sp, int n_lt);
+    Company(string brandc, Devices devaces, Creation creation);
+    Company();
+    Company(string brandc);
+    //Company(const Company& comp);
+    ~Company();
 };
 
-company init_comp(string brand, devices devaces, creation creation);
+Company init_comp(string brand, Devices devaces, Creation creation);
 /*
 void input(class company& comp, int* n_sp, int* n_lt);
 

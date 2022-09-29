@@ -2,17 +2,26 @@
 #include "smartphone.h"
 #include "laptop.h"
 
-class devices
+class Devices
 {
     public:
-    smartphone* smartphone;
-    laptop* laptop;
+    string brandd;
+    Smartphone* smartphone;
+    Laptop* laptop;
+
+    void input_dev(int* n_sp, int* n_lt);
+
+    void output_dev(int n_sp, int n_lt);
+
+    int income_dev(int n_sp, int n_lt);
+
+    Devices(string brand, Smartphone* smartphone, Laptop* laptop);
+
+    Devices();
+
+    Devices(Smartphone* smartp);
+
+    ~Devices();
 };
 
-devices init_ds(smartphone* smartphone, laptop* laptop);
-
-void input_dev(class devices& dev, int* n_sp, int* n_lt);
-
-void output_dev(class devices& dev, int n_sp, int n_lt);
-
-int income_dev(class devices& dev, int n_sp, int n_lt);
+//devices (smartphone* smartphone, laptop* laptop);

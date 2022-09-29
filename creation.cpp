@@ -1,31 +1,51 @@
 #include "creation.h"
-#include <iostream>
-#include <string>
-using namespace std;
 
-creation init_cn(int expenses_rent, int expenses_creation)
+
+Creation::Creation(int exp_rent, int exp_creation)
 {
-    creation creat;
+    expenses_rent = exp_rent;
+    expenses_creation = exp_creation;
+}
+
+Creation::Creation()
+{
+    expenses_rent = 0;
+    expenses_creation = 0;
+}
+
+Creation::Creation(int exp_rent)
+{
+    expenses_rent = exp_rent;
+    expenses_creation = 0;
+}
+
+Creation::~Creation() {}
+
+/*
+Creation init_cn(int expenses_rent, int expenses_creation)
+{
+    Creation creat;
     creat.expenses_rent = expenses_rent;
     creat.expenses_creation = expenses_creation;
     return creat;
 }
+*/
 
-void input_creat(class creation &creat)
+void Creation::input_creat()
 {
     cout << "Введите постоянные издержки" << endl;
-    cin >> creat.expenses_rent;
+    cin >> expenses_rent;
     cout << "Введите переменные издержки" << endl;
-    cin >> creat.expenses_creation;
+    cin >> expenses_creation;
 }
 
-void output_creat(class creation &creat)
+void Creation::output_creat()
 {
-    cout << "Постоянные издержки = " << creat.expenses_rent << endl;
-    cout << "Переменные издержки = " << creat.expenses_creation << endl;
+    cout << "Постоянные издержки = " << expenses_rent << endl;
+    cout << "Переменные издержки = " << expenses_creation << endl;
 }
 
-int expenses_creat(class creation &creat)
+int Creation::expenses_creat()
 {
-    return creat.expenses_rent + creat.expenses_creation;
+    return expenses_rent + expenses_creation;
 }

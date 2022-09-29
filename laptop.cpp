@@ -1,27 +1,41 @@
 #include "laptop.h"
 
-laptop init_lt(string model, int quality, int price)
+Laptop::Laptop(string model, int quality, int price)
 {
-    laptop lap;
-    lap.model_lt = model;
-    lap.quantity_lt = quality;
-    lap.price_lt = price;
-    return lap;
+    model_lt = model;
+    quantity_lt = quality;
+    price_lt = price;
 }
 
-void input(class laptop &lap)
+Laptop::Laptop()
+{
+    model_lt = "Model";
+    quantity_lt = 0;
+    price_lt = 0;
+}
+
+Laptop::Laptop(string model)
+{
+    model_lt = model;
+    quantity_lt = 0;
+    price_lt = 0;
+}
+
+Laptop::~Laptop() {}
+
+void Laptop::input()
 {
     cout << "Введите модель ноутбука" << endl;
-    cin >> lap.model_lt;
+    cin >> model_lt;
     cout << "Введите число произведенных ноутбуков" << endl;
-    cin >> lap.quantity_lt;
+    cin >> quantity_lt;
     cout << "Введите цену одного ноутбука" << endl;
-    cin >> lap.price_lt;
+    cin >> price_lt;
 }
 
-void output(class laptop &lap)
+void Laptop::output()
 {
-    cout << "Модель ноутбука: " << lap.model_lt << endl;
-    cout << "Число произведенных ноутбуков = " << lap.quantity_lt << endl;
-    cout << "Цена одного ноутбука = " << lap.price_lt << endl;
+    cout << "Модель ноутбука: " << model_lt << endl;
+    cout << "Число произведенных ноутбуков = " << quantity_lt << endl;
+    cout << "Цена одного ноутбука = " << price_lt << endl;
 }

@@ -17,14 +17,14 @@ int main()
 {
     setlocale(LC_ALL, "RUS");
     int exit = 1, n_sp = 0, n_lt = 0, n;
-    init_sp("Model", 0, 0);
-    init_lt("Model", 0, 0);
-    smartphone* smartphone = new class smartphone[10];
-    laptop* laptop = new class laptop[10];
-    devices dev = init_ds(smartphone, laptop);
-    creation creat = init_cn(0, 0);
-    company comp = init_comp("Brand", dev, creat);
-    comp.input(&n_sp, &n_lt);
+    //smartphone("Model", 0, 0);
+    Smartphone* smartphone = new Smartphone[10];
+    Laptop* laptop = new Laptop[10];
+    Devices devises("Brand", smartphone, laptop);
+    Creation creation(0, 0);
+    //Company company("Brand", devises, creation);
+    Company company("Brand", devises, creation);
+    company.input(&n_sp, &n_lt);
     do
     {
         n = 0;
@@ -34,19 +34,19 @@ int main()
         switch (n)
         {
         case 1:
-            cout << "Доход с продаж =" << comp.income(n_sp, n_lt) << endl;
+            cout << "Доход с продаж =" << company.income(n_sp, n_lt) << endl;
             _getch();
             break;
         case 2:
-            cout << "Издержки компании =" << comp.expenses() << endl;
+            cout << "Издержки компании =" << company.expenses() << endl;
             _getch();
             break;
         case 3:
-            cout << "Прибыль компании =" << comp.profit(n_sp, n_lt) << endl;
+            cout << "Прибыль компании =" << company.profit(n_sp, n_lt) << endl;
             _getch();
             break;
         case 4:
-            comp.output(n_sp, n_lt);
+            company.output(n_sp, n_lt);
             _getch();
             break;
         case 5:
@@ -56,5 +56,10 @@ int main()
             break;
         }
     } while (exit);
+    delete[] smartphone;
+    delete[] laptop;
+    delete& devises;
+    delete& creation;
+    delete& company;
     return (0);
 }
