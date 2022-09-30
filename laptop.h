@@ -20,5 +20,7 @@ class Laptop
 
     Laptop(string model);
 
+    Laptop(const Laptop& lap_ref);
+
     ~Laptop();
 };

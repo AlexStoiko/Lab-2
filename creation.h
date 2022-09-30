@@ -23,13 +23,3 @@ class Creation
 
     ~Creation();
 };
-
-//Creation::Creation(int expenses_rent, int expenses_creation);
-
-/*
-void input_creat(class Creation& creat);
-
-void output_creat(class Creation& creat);
-
-int expenses_creat(class Creation& creat);
-*/

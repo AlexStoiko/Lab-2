@@ -5,7 +5,6 @@
 class Devices
 {
     public:
-    string brandd;
     Smartphone* smartphone;
     Laptop* laptop;
 
@@ -15,13 +14,13 @@ class Devices
 
     int income_dev(int n_sp, int n_lt);
 
-    Devices(string brand, Smartphone* smartphone, Laptop* laptop);
+    Devices(Smartphone* smartphone, Laptop* laptop);
 
     Devices();
 
     Devices(Smartphone* smartp);
 
+    Devices(const Devices & dev_ref);
+
     ~Devices();
 };
-
-//devices (smartphone* smartphone, laptop* laptop);

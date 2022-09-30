@@ -20,13 +20,7 @@ class Smartphone
 
     Smartphone(string model);
 
+    Smartphone(const Smartphone & smart_ref);
+
     ~Smartphone();
 };
-
-/*
-Smartphone init_sp(string model, int quality, int price);
-
-void input_smartp(class Smartphone& smartp);
-
-void output_smartp(class Smartphone& smartp);
-*/

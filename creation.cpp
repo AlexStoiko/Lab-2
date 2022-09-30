@@ -21,15 +21,6 @@ Creation::Creation(int exp_rent)
 
 Creation::~Creation() {}
 
-/*
-Creation init_cn(int expenses_rent, int expenses_creation)
-{
-    Creation creat;
-    creat.expenses_rent = expenses_rent;
-    creat.expenses_creation = expenses_creation;
-    return creat;
-}
-*/
 
 void Creation::input_creat()
 {

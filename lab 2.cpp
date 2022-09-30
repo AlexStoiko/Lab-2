@@ -17,13 +17,11 @@ int main()
 {
     setlocale(LC_ALL, "RUS");
     int exit = 1, n_sp = 0, n_lt = 0, n;
-    //smartphone("Model", 0, 0);
     Smartphone* smartphone = new Smartphone[10];
     Laptop* laptop = new Laptop[10];
-    Devices devises("Brand", smartphone, laptop);
+    Devices devices(smartphone, laptop);
     Creation creation(0, 0);
-    //Company company("Brand", devises, creation);
-    Company company("Brand", devises, creation);
+    Company company("Brand", devices, creation);
     company.input(&n_sp, &n_lt);
     do
     {
@@ -58,7 +56,7 @@ int main()
     } while (exit);
     delete[] smartphone;
     delete[] laptop;
-    delete& devises;
+    delete& devices;
     delete& creation;
     delete& company;
     return (0);

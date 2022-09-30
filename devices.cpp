@@ -3,42 +3,32 @@
 #include <string>
 using namespace std;
 
-Devices::Devices(string brand, Smartphone* smartp, Laptop* lap)
+Devices::Devices(Smartphone* smartp, Laptop* lap)
 {
-    brandd = brand;
     smartphone = smartp;
     laptop = lap;
 }
 
+Devices::Devices(const Devices& dev_ref)
+{
+    this->smartphone = new Smartphone(*dev_ref.smartphone);
+    this->laptop = new Laptop(*dev_ref.laptop);
+}
+
 Devices::Devices()
 {
-    smartphone->model_sp = "Model";
-    smartphone->price_sp = 0;
-    smartphone->quantity_sp = 0;
-    laptop->model_lt = "Model";
-    laptop->price_lt = 0;
-    laptop->quantity_lt = 0;
+    smartphone = new Smartphone("Model", 0, 0);
+    laptop = new Laptop("Model", 0, 0);
 }
 
 Devices::Devices(Smartphone* smartp)
 {
     smartphone = smartp;
-    laptop->model_lt = "Model";
-    laptop->price_lt = 0;
-    laptop->quantity_lt = 0;
+    laptop = new Laptop("Model", 0, 0);
 }
 
 Devices::~Devices() {}
 
-/*
-devices init_ds(smartphone* smartphone, laptop* laptop)
-{
-    devices dev;
-    dev.smartphone = smartphone;
-    dev.laptop = laptop;
-    return dev;
-}
-*/
 
 void Devices::input_dev(int* n_sp, int* n_lt)
 {

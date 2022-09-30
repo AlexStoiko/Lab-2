@@ -7,6 +7,13 @@ Laptop::Laptop(string model, int quality, int price)
     price_lt = price;
 }
 
+Laptop::Laptop(const Laptop& lap_ref)
+{
+    model_lt = string(lap_ref.model_lt);
+    quantity_lt = int(lap_ref.quantity_lt);
+    price_lt = int(lap_ref.price_lt);
+}
+
 Laptop::Laptop()
 {
     model_lt = "Model";

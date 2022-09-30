@@ -7,6 +7,13 @@ Smartphone::Smartphone(string model, int quality, int price)
     price_sp = price;
 }
 
+Smartphone::Smartphone(const Smartphone& smart_ref)
+{
+    model_sp = string(smart_ref.model_sp);
+    quantity_sp = int(smart_ref.quantity_sp);
+    price_sp = int(smart_ref.price_sp);
+}
+
 Smartphone::Smartphone()
 {
     model_sp = "Model";
