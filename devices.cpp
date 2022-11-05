@@ -3,10 +3,10 @@
 #include <string>
 using namespace std;
 
-Devices::Devices(Smartphone* smartp, Laptop* lap)
+Devices::Devices(Smartphone* smartphone, Laptop* laptop)
 {
-    smartphone = smartp;
-    laptop = lap;
+    this->smartphone = smartphone;
+    this->laptop = laptop;
 }
 
 Devices::Devices(const Devices& dev_ref)
@@ -21,10 +21,10 @@ Devices::Devices()
     laptop = new Laptop("Model", 0, 0);
 }
 
-Devices::Devices(Smartphone* smartp)
+Devices::Devices(Smartphone* smartphone)
 {
-    smartphone = smartp;
-    laptop = new Laptop("Model", 0, 0);
+    this->smartphone = smartphone;
+    this->laptop = new Laptop("Model", 0, 0);
 }
 
 Devices::~Devices() {}
@@ -32,27 +32,13 @@ Devices::~Devices() {}
 
 void Devices::input_dev(int* n_sp, int* n_lt)
 {
-    cout << "Введите число моделей смартфонов вашей компании" << endl;
-    cin >> *n_sp;
     for (int i = 0; i < *n_sp; i++)
     {
-        cout << "Введите модель смартфона" << endl;
-        cin >> smartphone[i].model_sp;
-        cout << "Введите число произведенных смартфонов" << endl;
-        cin >> smartphone[i].quantity_sp;
-        cout << "Ввведите цену одного смартфона" << endl;
-        cin >> smartphone[i].price_sp;
+        smartphone[i].input_sp();
     }
-    cout << "Введите число моделей ноутбуков вашей компании" << endl;
-    cin >> *n_lt;
     for (int i = 0; i < *n_lt; i++)
     {
-        cout << "Введите модель ноутбука" << endl;
-        cin >> laptop[i].model_lt;
-        cout << "Введите число произведенных ноутбуков" << endl;
-        cin >> laptop[i].quantity_lt;
-        cout << "Введите цену одного ноутбука" << endl;
-        cin >> laptop[i].price_lt;
+        laptop[i].input_lt();
     }
 }
 
@@ -60,15 +46,23 @@ void Devices::output_dev(int n_sp, int n_lt)
 {
     for (int i = 0; i < n_sp; i++)
     {
-        cout << "Модель смартфона: " << smartphone[i].model_sp << endl;
-        cout << "Число произведенных смарфонов = " << smartphone[i].quantity_sp << endl;
-        cout << "Цена одного смартфона = " << smartphone[i].price_sp << endl;
+        smartphone[i].output_sp();
     }
     for (int i = 0; i < n_lt; i++)
     {
-        cout << "Модель ноутбука: " << laptop[i].model_lt << endl;
-        cout << "Число произведенных ноутбуков = " << laptop[i].quantity_lt << endl;
-        cout << "Цена одного ноутбука = " << laptop[i].price_lt << endl;
+        laptop[i].output_lt();
+    }
+}
+
+void Devices::outstr_dev(int n_sp, int n_lt)
+{
+    for (int i = 0; i < n_sp; i++)
+    {
+        cout << smartphone[i].getstr_sp() << endl;
+    }
+    for (int i = 0; i < n_lt; i++)
+    {
+        cout << laptop[i].getstr_lt() << endl;
     }
 }
 
@@ -76,8 +70,16 @@ int Devices::income_dev(int n_sp, int n_lt)
 {
     int income_sp = 0, income_lt = 0;
     for (int i = 0; i < n_sp; i++)
-        income_sp += smartphone[i].price_sp * smartphone[i].quantity_sp;
+        income_sp += smartphone[i].income_sp();
     for (int i = 0; i < n_lt; i++)
-        income_lt += laptop[i].price_lt * laptop[i].quantity_lt;
+        income_lt += laptop[i].income_lt();
     return income_sp + income_lt;
+}
+
+void outsmartp(Smartphone& smartphone, int n_sp)
+{
+    for (int i = 0; i < n_sp; i++)
+    {
+        cout << smartphone.model_sp << "\t|" << smartphone.quantity_sp << "\t|" << smartphone.price_sp << endl;
+    }
 }

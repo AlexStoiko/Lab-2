@@ -1,10 +1,10 @@
 #include "laptop.h"
 
-Laptop::Laptop(string model, int quality, int price)
+Laptop::Laptop(string model_lt, int quantity_lt, int price_lt)
 {
-    model_lt = model;
-    quantity_lt = quality;
-    price_lt = price;
+    this->model_lt = model_lt;
+    this->quantity_lt = quantity_lt;
+    this->price_lt = price_lt;
 }
 
 Laptop::Laptop(const Laptop& lap_ref)
@@ -21,16 +21,16 @@ Laptop::Laptop()
     price_lt = 0;
 }
 
-Laptop::Laptop(string model)
+Laptop::Laptop(string model_lt)
 {
-    model_lt = model;
+    this->model_lt = model_lt;
     quantity_lt = 0;
     price_lt = 0;
 }
 
 Laptop::~Laptop() {}
 
-void Laptop::input()
+void Laptop::input_lt()
 {
     cout << "Введите модель ноутбука" << endl;
     cin >> model_lt;
@@ -40,9 +40,21 @@ void Laptop::input()
     cin >> price_lt;
 }
 
-void Laptop::output()
+void Laptop::output_lt()
 {
     cout << "Модель ноутбука: " << model_lt << endl;
     cout << "Число произведенных ноутбуков = " << quantity_lt << endl;
     cout << "Цена одного ноутбука = " << price_lt << endl;
+}
+
+string Laptop::getstr_lt()
+{
+    string laptop;
+    laptop = model_lt + " " + to_string(quantity_lt) + " " + to_string(price_lt);
+    return laptop;
+}
+
+int Laptop::income_lt()
+{
+    return price_lt * quantity_lt;
 }

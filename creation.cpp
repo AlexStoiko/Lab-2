@@ -1,10 +1,11 @@
 #include "creation.h"
 
+float Creation::taxes = 0;
 
-Creation::Creation(int exp_rent, int exp_creation)
+Creation::Creation(int expenses_rent, int expenses_creation)
 {
-    expenses_rent = exp_rent;
-    expenses_creation = exp_creation;
+    this->expenses_rent = expenses_rent;
+    this->expenses_creation = expenses_creation;
 }
 
 Creation::Creation()
@@ -13,14 +14,24 @@ Creation::Creation()
     expenses_creation = 0;
 }
 
-Creation::Creation(int exp_rent)
+Creation::Creation(int expenses_rent)
 {
-    expenses_rent = exp_rent;
-    expenses_creation = 0;
+    this->expenses_rent = expenses_rent;
+    this->expenses_creation = 0;
 }
 
 Creation::~Creation() {}
 
+void Creation::set_taxes()
+{
+    cout << "¬ведите налоги в %" << endl;
+    cin >> taxes;
+}
+
+float Creation::get_taxes()
+{
+    return taxes;
+}
 
 void Creation::input_creat()
 {

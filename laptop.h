@@ -5,20 +5,21 @@ using namespace std;
 
 class Laptop
 {
-    public:
+    private:
     string model_lt;
     int quantity_lt;
     int price_lt;
+    public:
+    void input_lt();
+    void output_lt();
+    int income_lt();
+    string getstr_lt();
 
-    void input();
-
-    void output();
-
-    Laptop(string model, int quality, int price);
+    Laptop(string model_lt, int quantity_lt, int price_lt);
 
     Laptop();
 
-    Laptop(string model);
+    Laptop(string model_lt);
 
     Laptop(const Laptop& lap_ref);
 

@@ -27,7 +27,7 @@ int main()
     {
         n = 0;
         system("cls");
-        cout << "Выберите действие:\nПосчитать доход с продаж (1)\nПосчитать издержки компании (2)\nПосчитать прибыль компании (3)\nВывести все данные компании (4)\nВыход из программы (5)\n" << endl;
+        cout << "Выберите действие:\nПосчитать доход с продаж (1)\nПосчитать издержки компании (2)\nПосчитать прибыль компании (3)\nВывести все данные компании (4)\nУказать налоги (5)\nВывести данные о продуктах этой компании(6)\nИнфляция 3%(7)\nВыход из программы (8)\n" << endl;
         cin >> n;
         switch (n)
         {
@@ -48,7 +48,20 @@ int main()
             _getch();
             break;
         case 5:
+            creation.set_taxes();
+            break;
+        case 6:
+            company.outputstr(n_sp, n_lt);
+            _getch();
+            break;
+        case 7:
+            creation.taxes++;
+            break;
+        case 8:
             exit = 0;
+            break;
+        case 9:
+        
             break;
         default:
             break;
@@ -56,8 +69,5 @@ int main()
     } while (exit);
     delete[] smartphone;
     delete[] laptop;
-    delete& devices;
-    delete& creation;
-    delete& company;
     return (0);
 }
