@@ -30,19 +30,21 @@ Devices::Devices(Smartphone* smartphone)
 Devices::~Devices() {}
 
 
-void Devices::input_dev(int* n_sp, int* n_lt)
+void Devices::input_dev(int *n_sp, int *n_lt)
 {
-    for (int i = 0; i < *n_sp; i++)
+    this->n_sp = *n_sp;
+    this->n_lt = *n_lt;
+    for (int i = 0; i < this->n_sp; i++)
     {
         smartphone[i].input_sp();
     }
-    for (int i = 0; i < *n_lt; i++)
+    for (int i = 0; i < this->n_lt; i++)
     {
         laptop[i].input_lt();
     }
 }
 
-void Devices::output_dev(int n_sp, int n_lt)
+void Devices::output_dev()
 {
     for (int i = 0; i < n_sp; i++)
     {
@@ -54,7 +56,7 @@ void Devices::output_dev(int n_sp, int n_lt)
     }
 }
 
-void Devices::outstr_dev(int n_sp, int n_lt)
+void Devices::outstr_dev()
 {
     for (int i = 0; i < n_sp; i++)
     {
@@ -66,7 +68,7 @@ void Devices::outstr_dev(int n_sp, int n_lt)
     }
 }
 
-int Devices::income_dev(int n_sp, int n_lt)
+int Devices::income_dev()
 {
     int income_sp = 0, income_lt = 0;
     for (int i = 0; i < n_sp; i++)
@@ -82,4 +84,14 @@ void outsmartp(Smartphone& smartphone, int n_sp)
     {
         cout << smartphone.model_sp << "\t|" << smartphone.quantity_sp << "\t|" << smartphone.price_sp << endl;
     }
+}
+
+int Devices::get_n_sp()
+{
+    return n_sp;
+}
+
+int Devices::get_n_lt()
+{
+    return n_lt;
 }

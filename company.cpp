@@ -48,20 +48,19 @@ void Company::input(int* n_sp, int* n_lt)
 void Company::output(int n_sp, int n_lt)
 {
     cout << brand << endl;
-    devices.output_dev(n_sp, n_lt);
+    devices.output_dev();
     creation.output_creat();
 }
 
 void Company::outputstr(int n_sp, int n_lt)
 {
-    devices.outstr_dev(n_sp, n_lt);
+    devices.outstr_dev();
 }
-
 
 float Company::income(int n_sp, int n_lt)
 {
     float income;
-    income = devices.income_dev(n_sp, n_lt) * (100 - creation.taxes) / 100;
+    income = devices.income_dev() * (100 - creation.taxes) / 100;
     return income;
 }
 
